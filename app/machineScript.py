@@ -33,3 +33,6 @@ print("R value: " + str(r2_score(y_test, y_pred)))
 print("Price: " + str(scriptFeed(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])))
 
 sys.stdout.flush()
+
+
+print('Adrian')
