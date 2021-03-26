@@ -11,7 +11,7 @@
         </li>
       </div>
     </nav>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Predict Apples Price"/>
     <Predict/>
   </div>
 </template>

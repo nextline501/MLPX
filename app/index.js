@@ -11,10 +11,6 @@ app.get('/', (req, res) => {
   res.send("ok")
 })
 
-app.post('/api/tutorials', (req, res) => {
-  res.send("ok")
-})
-
 app.post('/api/majsmajs', (req, res) => {
   res.send("majs")
 })
@@ -37,7 +33,7 @@ app.get('/api/py', (req, res) => {
   pyProg.stdout.on('data', function(data) {
     console.log(data.toString());
     res.write(data);
-    res.end('end');
+    res.end()
   });
 })
 

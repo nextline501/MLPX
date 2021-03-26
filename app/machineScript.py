@@ -20,7 +20,7 @@ regressor.fit(X_train, y_train)
 y_pred = regressor.predict(X_test)
 
 np.set_printoptions(precision=2)
-print(np.concatenate((y_pred.reshape(len(y_pred),1),y_test.reshape(len(y_test),1)),1))
+##print(np.concatenate((y_pred.reshape(len(y_pred),1),y_test.reshape(len(y_test),1)),1))
 
 
 def scriptFeed(open_price, high_price, low_price, vol):
@@ -28,10 +28,8 @@ def scriptFeed(open_price, high_price, low_price, vol):
     return est_value
 
 from sklearn.metrics import r2_score
-print("R value: " + str(r2_score(y_test, y_pred)))
 
-print(222222222222)
-print(scriptFeed(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4]))
-print(333333333333)
+print("R value: " + str(r2_score(y_test, y_pred)))
+print("Price: " + str(scriptFeed(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])))
 
 sys.stdout.flush()

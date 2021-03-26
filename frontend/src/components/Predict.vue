@@ -1,35 +1,12 @@
 <template>
   <div class="submit-form">
     <div v-if="!submitted">
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input
-          type="text"
-          class="form-control"
-          id="title"
-          required
-          v-model="tutorial.title"
-          name="title"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="description">Description</label>
-        <input
-          class="form-control"
-          id="description"
-          required
-          v-model="tutorial.description"
-          name="description"
-        />
-      </div>
-
-      <button @click="saveTutorial" class="btn btn-success">Submit</button>
+      <button @click="getPredPrice" class="btn btn-success">Predict Price</button>
     </div>
 
     <div v-else>
-      <h4>You submitted successfully!</h4>
-      <button class="btn btn-success" @click="newTutorial">Add</button>
+      <h4>{{ predData }}</h4>
+      <button class="btn btn-success" @click="newPred">Cool</button>
     </div>
   </div>
 </template>
@@ -38,37 +15,30 @@
 import DataService from "../services/dataService";
 
 export default {
-  name: "add-tutorial",
+  name: "Predict",
   data() {
     return {
-      tutorial: {
-        id: null,
-        title: "",
-        description: "",
-        published: false
-      },
+      predData: [],
       submitted: false
     };
   },
   methods: {
-    saveTutorial() {
-      var data = {
-        title: this.tutorial.title,
-        description: this.tutorial.description
-      };
-
-      DataService.create(data)
-        .then(response => {
-          this.tutorial.id = response.data.id;
-          console.log(response.data);
-          this.submitted = true;
-        })
-        .catch(e => {
-          console.log(e);
-        });
+    getPredPrice() {
+      DataService.getPred().then(response => {
+        this.predData= response.data;
+        console.log(this.predData)
+        this.showPrice();
+      })
+      .catch(e => {
+        console.log(e);
+      });
     },
-    
-    newTutorial() {
+
+    showPrice() {
+      this.submitted = true;
+    },
+
+    newPred() {
       this.submitted = false;
       this.tutorial = {};
     }

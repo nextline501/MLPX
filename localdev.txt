@@ -4,10 +4,13 @@ npm install express
 npm install sqlite3
 npm install cors
 
+### npm install
 
 Vue
 npm install vue-router
 npm install axios
+
+### cd frontend -> npm install 
 
 
 ### local de-bug

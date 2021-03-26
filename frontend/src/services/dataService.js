@@ -1,6 +1,10 @@
 import http from "../http-common";
 
 class DataService {
+  getPred() {
+    return http.get("/py")
+  }
+
   getAll() {
     return http.get("/tutorials");
   }
