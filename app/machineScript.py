@@ -36,4 +36,7 @@ sys.stdout.flush()
 
 print('Adrian')
 
+print('Adrian')
+print('Currently Working....')
 print("lot's of work done lul")
+
