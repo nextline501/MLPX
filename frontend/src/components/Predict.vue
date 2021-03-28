@@ -6,7 +6,7 @@
         placeholder="Daily Open Price..."
         class="form-control"
         id="openPrice"
-        required v-model="predictModel.openPrice"
+        required v-model="predModel.openPrice"
         name="openPrice"
       >
       
@@ -15,7 +15,7 @@
         placeholder="Current High Price..."
         class= "form-control"
         id = "highPrice"
-        required v-model="predictModel.highPrice"
+        required v-model="predModel.highPrice"
         name = "highPrice"
       >
 
@@ -24,7 +24,7 @@
         placeholder="Current Low Price..."
         class = "form-control"
         id="lowPrice"
-        required v-model="predictModel.lowPrice"
+        required v-model="predModel.lowPrice"
         name = "lowPrice"
       >
 
@@ -33,7 +33,7 @@
         placeholder="Current Volume..."
         class= "form-control"
         id = "vol"
-        required v-model="predictModel.vol"
+        required v-model="predModel.vol"
         name = "vol"
       >
       
@@ -55,36 +55,33 @@ export default {
   data() {
     return {
       predData: [],
-      predictModel: {
-        id: null,
+      predModel: {
         openPrice: "",
         highPrice: "",
         lowPrice: "",
         vol: "",
-        published: false
       },
       submitted: false
     };
   },
   methods: {
-    postSendData(){
+    async getPredPrice() {
       let data = {
-        openPrice: this.predictModel.openPrice,
-        highPrice: this.predictModel.highPrice,
-        lowPrice: this.predictModel.lowPrice,
-        vol: this.predictModel.vol
+        openPrice: this.predModel.openPrice,
+        highPrice: this.predModel.highPrice,
+        lowPrice: this.predModel.lowPrice,
+        vol: this.predModel.vol
       }
-
-      DataService.sendData(data).then(response => {
-        console.log(response.data)
-      })
-    },
-
-    getPredPrice() {
-      this.postSendData();
       
-      DataService.getPred().then(response => {
-        this.predData= response.data;
+      DataService.sendData(data).then(response => {
+        console.log(response)
+      })
+      .catch(e => {
+        console.log(e)
+      });
+      
+      await DataService.getPred().then(response => {
+        this.predData = response.data;
         console.log(this.predData)
         this.showPrice();
       })

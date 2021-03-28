@@ -1,12 +1,12 @@
 import http from "../http-common";
 
 class DataService {
-  getPred() {
-    return http.get("/py")
+  getPred(data) {
+    return http.get("/py", data)
   }
 
   sendData(data) {
-    return http.post("/pyy", data)
+    return http.post("/data", data)
   }
 
   getAll() {
