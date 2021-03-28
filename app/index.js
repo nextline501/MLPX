@@ -11,17 +11,16 @@ app.get('/', (req, res) => {
   res.send("ok")
 })
 
-app.post('/api/majsmajs', (req, res) => {
-  res.send("majs")
-})
-
-
 app.get('/api/aaplData', (req, res) => {
   res.send()
 });
 
+app.post('/api/pyy', (req, res) => {
+  console.log(req.body)
+})
 
 app.get('/api/py', (req, res) => {
+
   let openPrice = 123;
   let highPrice = 125;
   let lowPrice = 122;

@@ -5,6 +5,10 @@ class DataService {
     return http.get("/py")
   }
 
+  sendData(data) {
+    return http.post("/pyy", data)
+  }
+
   getAll() {
     return http.get("/tutorials");
   }
