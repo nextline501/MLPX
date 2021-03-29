@@ -11,12 +11,15 @@
         </li>
       </div>
     </nav>
+    <charts/>
     <HelloWorld msg="Predict Apples Price"/>
     <Predict/>
   </div>
+
 </template>
 
 <script>
+import charts from './components/charts.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Predict from './components/Predict.vue'
 
@@ -25,6 +28,7 @@ export default {
   components: {
     HelloWorld,
     Predict,
+    charts,
   }
 }
 </script>
