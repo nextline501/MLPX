@@ -27,7 +27,6 @@ app.post('/api/data', (req, res) => {
 });
 
 app.get('/api/py', async (req, res) => {
-  
   const { spawn } = require('child_process');
   const pyProg = spawn('python', ['./machineScript.py', openPrice, highPrice, lowPrice, vol]);
 
