@@ -65,7 +65,7 @@ export default {
     };
   },
   methods: {
-    async getPredPrice() {
+    getPredPrice() {
       let data = {
         openPrice: this.predModel.openPrice,
         highPrice: this.predModel.highPrice,
@@ -75,18 +75,16 @@ export default {
       
       DataService.sendData(data).then(response => {
         console.log(response)
-      })
-      .catch(e => {
-        console.log(e)
-      });
-      
-      await DataService.getPred().then(response => {
+      }).then(response => {
+        DataService.getPred().then(response => {
         this.predData = response.data;
         console.log(this.predData)
         this.showPrice();
+      });
+        console.log(response)
       })
       .catch(e => {
-        console.log(e);
+        console.log(e)
       });
     },
 

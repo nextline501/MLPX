@@ -18,15 +18,16 @@ let highPrice;
 let lowPrice;
 let vol;
 
-app.post('/api/data', (req, res) => {
+app.post ('/api/data', (req, res) => {
   console.log("yolo")
-  openPrice = req.body.openPrice
-  highPrice =  req.body.highPrice
-  lowPrice =  req.body.lowPrice
+  openPrice = req.body.openPrice 
+  highPrice = req.body.highPrice
+  lowPrice = req.body.lowPrice
   vol = req.body.vol
+  res.send("POST ok")
 });
 
-app.get('/api/py', async (req, res) => {
+app.get('/api/py', (req, res) => {
   const { spawn } = require('child_process');
   const pyProg = spawn('python', ['./machineScript.py', openPrice, highPrice, lowPrice, vol]);
 
@@ -35,7 +36,7 @@ app.get('/api/py', async (req, res) => {
     res.write(data);
     res.end()
   });
-})
+});
 
 app.listen(5501, () => console.log('Application listening on port 5501!'))
 
