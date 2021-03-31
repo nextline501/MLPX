@@ -84,8 +84,8 @@ export default {
         label: 'Line Dataset',
         data,
         type: 'line',
-        backgroundColor: 'orange',
-        borderColor: 'black',
+        backgroundColor: 'blue',
+        borderColor: 'orange',
         order: 1
       })
 
