@@ -4,31 +4,28 @@
       <router-link to="/" class="navbar-brand">MLPX</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/tutorials" class="nav-link">ML1</router-link>
+          <router-link to="/Mlr" class="nav-link">MLR</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/add" class="nav-link">ML2</router-link>
+          <router-link to="/Svr" class="nav-link">SVR</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/Charts" class="nav-link">Statistics</router-link>
         </li>
       </div>
     </nav>
-    <charts/>
-    <HelloWorld msg="Predict Apples Price"/>
-    <Predict/>
+    <HelloWorld msg="Predict Apples Price"/> 
+    <router-view/>
   </div>
-
 </template>
 
 <script>
-import charts from './components/charts.vue'
 import HelloWorld from './components/HelloWorld.vue'
-import Predict from './components/Predict.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Predict,
-    charts,
   }
 }
 </script>

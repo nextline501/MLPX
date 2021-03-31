@@ -98,7 +98,7 @@ export default {
 </script>
 <style scoped>
 #myChart {
-  max-width: 600px;
-  max-height: 600px;
+  max-width: 800px;
+  max-height: 800px;
 }
 </style>

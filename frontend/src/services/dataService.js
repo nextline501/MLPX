@@ -9,8 +9,8 @@ class DataService {
     return http.post("/data", data)
   }
 
-  getAll() {
-    return http.get("/tutorials");
+  getSvr() {
+    return http.get("/svr");
   }
 
   get(id) {

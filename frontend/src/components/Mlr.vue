@@ -51,7 +51,7 @@
 import DataService from "../services/dataService";
 
 export default {
-  name: "Predict",
+  name: "Mlr",
   data() {
     return {
       predData: [],

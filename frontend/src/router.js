@@ -13,10 +13,22 @@ export default new Router({
       component: () => import("./components/HelloWorld")
     },
     {
-      path: "/Predict",
-      alias: "/Predict",
-      name: "Predict",
-      component: () => import("./components/Predict")
+      path: "/Mlr",
+      alias: "/Mlr",
+      name: "Mlr",
+      component: () => import("./components/Mlr")
     },
+    {
+      path: "/charts",
+      alias: "/charts",
+      name: "charts",
+      component: ()=> import("./components/charts.vue")
+    },
+    {
+      path: "/Svr",
+      alias: "/Svr",
+      name: "svr",
+      component: ()=> import("./components/Svr.vue")
+    }
   ]
 });

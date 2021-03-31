@@ -38,6 +38,17 @@ app.get('/api/py', (req, res) => {
   });
 });
 
+app.get('/api/svr', (req, res) => {
+  const { spawn } = require('child_process');
+  const pyProg = spawn('python', ['./machineScript2.py']);
+
+  pyProg.stdout.on('data', function(data) {
+    console.log(data.toString());
+    res.write(data);
+    res.end()
+  });
+});
+
 app.listen(5501, () => console.log('Application listening on port 5501!'))
 
 module.exports = app

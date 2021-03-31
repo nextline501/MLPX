@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import sys
 from sklearn.linear_model import LinearRegression
 from sklearn.svm import SVR
 from sklearn.model_selection import train_test_split
@@ -37,13 +38,24 @@ print('Linear Regression Confidence: ', linreg_confidence)
 
 x_forecast = np.array(df.drop(['Prediction'],1 ))[-forecast:]
 
+def svr_pred():
+    print('Support Vector Regression prediction:')
+    svm_prediction = svr.predict(x_forecast)
+    return svm_prediction
 
-print('Support Vector Regression prediction:')
-svm_prediction = svr.predict(x_forecast)
-print(svm_prediction)
 
-print('')
+def linreg_pred():
+    print('Linear Regression prediction:')
+    linreg_prediction = linreg.predict(x_forecast)
+    return linreg_prediction
 
-print('Linear Regression prediction:')
-linreg_prediction = linreg.predict(x_forecast)
-print(linreg_prediction)
+
+print("Support vector regression prediction: " + str(svr_pred()))
+print("Accuracy: " + str(svr_confidence))
+
+
+print("Linear regression prediction: " + str(linreg_pred()))
+print("Accuracy: " + str(linreg_confidence))
+
+
+sys.stdout.flush()
