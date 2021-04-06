@@ -3,8 +3,7 @@
 </template>
 
 <script>
-// To install chart.js run: npm install chart.js --save
-// and do not forget to import it in the component thats gonna use charts.
+
 import Chart from "chart.js";
 
 export default {
