@@ -113,6 +113,12 @@ export default {
 
 <style>
 
+body {
+
+background-color: rgb(243, 243, 243)
+
+}
+
 .submit-form {
   max-width: 300px;
   margin: auto;
@@ -127,6 +133,19 @@ export default {
 
 h3{
   font-size: 25px;
+}
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+    background-color: darkblue !important;
+}
+footer{
+  text-align: center;
+  background-color: #343a40;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
 }
 
 </style>
