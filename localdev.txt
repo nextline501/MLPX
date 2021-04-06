@@ -13,6 +13,7 @@ npm install axios
 ### cd frontend -> npm install 
 
 npm install vue-simple-spinner --save.
+npm install chart.js --save.
 
 ### local de-bug
 npm run serve
