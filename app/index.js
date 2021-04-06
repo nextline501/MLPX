@@ -4,6 +4,10 @@ const db = require('./db');
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+// Dont know might delete
+const { spawn } = require('child_process');
+const pyProg = spawn('python', ['./machineScript.py']);
+
 app.use(cors());
 
 app.get('/', (req, res) => {

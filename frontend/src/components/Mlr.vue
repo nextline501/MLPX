@@ -1,5 +1,6 @@
 <template>
   <div class="submit-form">
+    <h3>Multiple Linear Regression</h3>
     <div v-if="!submitted">
       <input 
         type="text" 
@@ -37,18 +38,26 @@
         name = "vol"
       >
       
-      <button @click="getPredPrice" class="btn btn-success">Predict Price</button>
+      <button v-if= "!showSpinner"  id="MlrPred" @click="getPredPrice" class="btn btn-success">Predict Price</button>
+
+     <button v-else class="btn btn-success" id="MlrPred" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+      </button>
+
     </div>
 
     <div v-else>
       <h4>{{ predData }}</h4>
       <button class="btn btn-success" @click="newPred">Reset</button>
+      
     </div>
   </div>
 </template>
 
 <script>
 import DataService from "../services/dataService";
+
 
 export default {
   name: "Mlr",
@@ -61,11 +70,13 @@ export default {
         lowPrice: "",
         vol: "",
       },
-      submitted: false
+      submitted: false,
+      showSpinner: false
     };
   },
   methods: {
     getPredPrice() {
+      this.showSpinner = true
       let data = {
         openPrice: this.predModel.openPrice,
         highPrice: this.predModel.highPrice,
@@ -93,19 +104,29 @@ export default {
     },
 
     newPred() {
+      this.showSpinner = false;
       this.submitted = false;
-      this.tutorial = {};
     }
   }
 };
 </script>
 
 <style>
+
 .submit-form {
   max-width: 300px;
   margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
+
+
+#MlrPred{
+  margin-top:20px
+}
+
+h3{
+  font-size: 25px;
+}
+
 </style>
-
-
-
