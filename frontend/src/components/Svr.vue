@@ -3,7 +3,13 @@
   <br>
   <h3>Support Vector Regressor</h3>
   <div v-if="!submitted">
-    <button @click="getSvr" class="btn btn-success">Predict</button>
+
+    <button v-if= "!showSpinner"  id="SvrPred" @click="getSvr" class="btn btn-success">Predict Stock</button>
+
+     <button v-else class="btn btn-success" id="SvrPred" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+      </button>
   </div>
   
   <div v-else>
@@ -21,11 +27,13 @@ export default {
   data() {
     return {
       predData2: [],
-      submitted: false,
+      submitted: false,  
+      showSpinner: false
     };
   },
   methods: {
     getSvr(){
+      this.showSpinner = true
       DataService.getSvr().then(response => {
         console.log(response);
         this.predData2 = response.data;
@@ -33,6 +41,7 @@ export default {
       });
     },
     resetSvr(){
+      this.showSpinner = false;
       this.submitted = false;
     }
   }

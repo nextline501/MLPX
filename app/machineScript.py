@@ -30,6 +30,6 @@ def scriptFeed(open_price, high_price, low_price, vol):
 from sklearn.metrics import r2_score
 
 print("R value: " + str(r2_score(y_test, y_pred)))
-print("Price: " + str(scriptFeed(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])))
+print("Close price: " + str(scriptFeed(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])))
 
 sys.stdout.flush()
