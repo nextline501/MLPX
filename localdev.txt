@@ -12,9 +12,12 @@ npm install axios
 
 ### cd frontend -> npm install 
 
+npm install vue-simple-spinner --save.
 
 ### local de-bug
 npm run serve
+
+cd app -> node index.js
 
 ### 
 App.vue är den första komponenten som skapas 
@@ -23,6 +26,6 @@ App.vue är den första komponenten som skapas
 --Tanke: Är en databas överflödigt när vi egentligen hade kunnat webskrapa
        aktiedatan direkt från yahoo finance och passat den vidare direkt till vår algo. (nvm vi löste det.)
 
---Vercel satte tyvärr en käpp i hjulet som tog för lång tid att plocka ut, så vi köpte en ny cykel Vue.     
+--Vercel satte tyvärr en käpp i hjulet som tog för lång tid att plocka ut, bytte till vue     
 
 --vue create vue-js-client-crud skapar Vue.

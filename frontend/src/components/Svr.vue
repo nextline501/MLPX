@@ -1,5 +1,7 @@
 <template>
 <div>
+  <br>
+  <h3>Support Vector Regressor</h3>
   <div v-if="!submitted">
     <button @click="getSvr" class="btn btn-success">Predict</button>
   </div>
