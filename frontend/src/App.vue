@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <router-link to="/" class="navbar-brand">Home</router-link>
+      <router-link to="/" class="navbar-brand">Apple Stock Predictor</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link to="/Mlr" class="nav-link">MLR</router-link>
@@ -14,7 +14,7 @@
         </li>
       </div>
     </nav>
-     <HelloWorld msg="Apple Stock Predictor"/>
+     <HelloWorld msg=""/>
     <router-view/>
   </div>
 </template>
