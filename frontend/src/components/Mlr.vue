@@ -145,7 +145,14 @@ footer{
   left: 0;
   bottom: 0;
   width: 100%;
-
+  padding: 10px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: lightgray;
 }
 
 </style>
