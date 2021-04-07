@@ -40,4 +40,45 @@ export default {
   color: #8b8b8b;
   margin-top: 0px;
 }
+
+body {
+  background-color: rgb(243, 243, 243)
+}
+
+.submit-form {
+  max-width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+h3{
+  font-size: 25px;
+}
+
+.btn-success, .btn-success:active, .btn-success:visited {
+    background-color: darkblue !important;
+}
+
+.btn-success:hover {
+  background-color: blue !important;
+}
+
+
+footer{
+  text-align: center;
+  background-color: #343a40;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: lightgray;
+}
 </style>
