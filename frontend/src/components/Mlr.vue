@@ -49,6 +49,7 @@
 
     <div v-else>
       <h4>{{ predData }}</h4>
+      <h4>{{ closeData }}</h4>
       <button class="btn btn-success" @click="newPred">Reset</button>
       
     </div>
@@ -70,12 +71,22 @@ export default {
         lowPrice: "",
         vol: "",
       },
+      closeData: [],
       submitted: false,
       showSpinner: false
     };
   },
   methods: {
+    getAppleData(){
+      DataService.getCloseData().then(response => {
+        this.closeData = response.data;
+        console.log("ok");
+        console.log(this.closeData)
+      });
+    },
+
     getPredPrice() {
+      this.getAppleData();
       this.showSpinner = true
       let data = {
         openPrice: this.predModel.openPrice,

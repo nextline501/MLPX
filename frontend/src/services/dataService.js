@@ -13,6 +13,10 @@ class DataService {
     return http.get("/svr");
   }
 
+  getCloseData() {
+    return http.get('/aaplClose');
+  }
+
   get(id) {
     return http.get(`/tutorials/${id}`);
   }
