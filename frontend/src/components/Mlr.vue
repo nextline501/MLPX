@@ -48,7 +48,7 @@
     </div>
 
     <div v-else>
-      <h4>{{ predData }}</h4>
+      <h4>{{ "Predicted Close Price: " + predData }}</h4>
       <h4>{{ closeData }}</h4>
       <button class="btn btn-success" @click="newPred">Reset</button>
       

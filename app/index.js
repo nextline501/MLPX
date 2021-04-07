@@ -17,6 +17,7 @@ let openPrice;
 let highPrice;
 let lowPrice;
 let vol;
+let dataToDb;
 
 app.get("api/svrData", (req, res) => { 
   var foo = req.body.foo; 
@@ -42,6 +43,8 @@ app.get('/api/py', (req, res) => {
 
   pyProg.stdout.on('data', function(data) {
     console.log(data.toString());
+    dataToDb = data.toString();
+    console.log(kekw)
     res.write(data);
     res.end()
   });
