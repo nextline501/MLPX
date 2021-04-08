@@ -4,6 +4,10 @@ const db = require('./db');
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+// Dont know might delete
+const { spawn } = require('child_process');
+const pyProg = spawn('python', ['./machineScript.py']);
+
 app.use(cors());
 
 app.get('/', (req, res) => {
@@ -17,16 +21,6 @@ let openPrice;
 let highPrice;
 let lowPrice;
 let vol;
-let dataToDb;
-
-app.get("api/svrData", (req, res) => { 
-  var foo = req.body.foo; 
-  var ka = req.body.ka; 
-  console.log(foo); 
-  console.log(ka); 
-  res.send("kappa");
-  res.end();
-}); 
 
 app.post ('/api/data', (req, res) => {
   console.log("yolo")
@@ -43,8 +37,6 @@ app.get('/api/py', (req, res) => {
 
   pyProg.stdout.on('data', function(data) {
     console.log(data.toString());
-    dataToDb = data.toString();
-    console.log(kekw)
     res.write(data);
     res.end()
   });
@@ -70,7 +62,7 @@ app.get('/api/aaplClose', (req, res) => {
     res.write(data);
     res.end()
   });
-})
+});
 
 app.listen(5501, () => console.log('Application listening on port 5501!'))
 
