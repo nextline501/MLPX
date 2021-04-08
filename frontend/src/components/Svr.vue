@@ -50,8 +50,11 @@ export default {
 </script>
 
 <style scoped>
+h4{
+  margin-top: 15px;
+}
 #SvrPred{
-  margin-top:20px
+  margin-top:20px;
 }
 
 </style>
